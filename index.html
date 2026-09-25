@@ -1,0 +1,1863 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Ibrahim Hamadoun Macinanke - Senior Full-Stack Developer & AI / Marketing Automation Specialist."
+    />
+    <title>
+      Ibrahim Hamadoun Macinanké | Senior Full-Stack Developer Portfolio
+    </title>
+    <style>
+      /* CSS Variables for a Premium & Modern Design */
+      :root {
+        --bg-color: #0b0f19;
+        --surface-color: #111827;
+        --surface-hover: #1f2937;
+        --accent-color: #0ea5e9;
+        --accent-glow: rgba(14, 165, 233, 0.4);
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --border-color: #334155;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Reset & Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(to right, #fff, #38bdf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+      h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--accent-color);
+        border-radius: 2px;
+      }
+      p {
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      /* Layout & Navigation */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(11, 15, 25, 0.85);
+        backdrop-filter: blur(12px);
+        z-index: 1000;
+        border-bottom: 1px solid var(--border-color);
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        text-decoration: none;
+        letter-spacing: -1px;
+      }
+      .logo span {
+        color: var(--accent-color);
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+      .nav-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+      .nav-links a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Common Sections */
+      section {
+        padding: 6rem 0;
+        border-bottom: 1px solid rgba(51, 65, 85, 0.3);
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1.8rem;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition);
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+      }
+      .btn-primary {
+        background-color: var(--accent-color);
+        color: #fff;
+        box-shadow: 0 4px 15px var(--accent-glow);
+      }
+      .btn-primary:hover {
+        background-color: #0284c7;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px var(--accent-glow);
+      }
+      .btn-secondary {
+        background-color: transparent;
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+      }
+      .btn-secondary:hover {
+        border-color: var(--text-primary);
+        background-color: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+      }
+
+      /* Hero Section */
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+        background: radial-gradient(
+          circle at top right,
+          rgba(14, 165, 233, 0.1),
+          transparent 40%
+        );
+      }
+      .hero-content {
+        max-width: 800px;
+      }
+      .hero-subtitle {
+        color: var(--accent-color);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      /* Skills Section */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+      .skill-category {
+        background: var(--surface-color);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+      }
+      .skill-category:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+      .skill-category h3 {
+        margin-bottom: 1.5rem;
+        color: var(--text-primary);
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .skill-list {
+        list-style: none;
+      }
+      .skill-list li {
+        margin-bottom: 0.8rem;
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+      }
+      .skill-list li::before {
+        content: "▹";
+        color: var(--accent-color);
+        margin-right: 0.5rem;
+        font-weight: bold;
+      }
+
+      /* Experience Section */
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background: var(--border-color);
+      }
+      .timeline-item {
+        position: relative;
+        padding-left: 3rem;
+        margin-bottom: 3rem;
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--accent-color);
+        box-shadow: 0 0 10px var(--accent-color);
+      }
+      .timeline-date {
+        color: var(--accent-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .timeline-title {
+        font-size: 1.5rem;
+        color: var(--text-primary);
+        margin-bottom: 0.2rem;
+      }
+      .timeline-company {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+      .timeline-content ul {
+        list-style-position: inside;
+        color: var(--text-secondary);
+        margin-left: 1rem;
+      }
+      .timeline-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* Projects Section */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+      .project-card {
+        background: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition);
+      }
+      .project-card:hover {
+        border-color: rgba(14, 165, 233, 0.5);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        transform: translateY(-5px);
+      }
+      .project-content {
+        padding: 3rem;
+      }
+      .project-type {
+        color: var(--accent-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .project-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      .project-description {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-bottom: 2rem;
+      }
+      .tech-tag {
+        padding: 0.4rem 1rem;
+        background: rgba(14, 165, 233, 0.1);
+        color: var(--accent-color);
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: 1px solid rgba(14, 165, 233, 0.2);
+      }
+      .project-architecture {
+        background: #080b13;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid #1f2937;
+        margin-bottom: 1.5rem;
+      }
+      .project-architecture h4 {
+        margin-bottom: 1rem;
+        color: #fff;
+        font-size: 1.1rem;
+      }
+      .project-architecture ul {
+        list-style: none;
+      }
+      .project-architecture li {
+        margin-bottom: 0.8rem;
+        color: var(--text-secondary);
+        padding-left: 1.5rem;
+        position: relative;
+      }
+      .project-architecture li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+      }
+
+      /* Footer */
+      footer {
+        padding: 4rem 0;
+        text-align: center;
+        background: #05080f;
+        border-top: 1px solid var(--border-color);
+      }
+      footer p {
+        margin-bottom: 0;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        h2 {
+          font-size: 2rem;
+        }
+        .nav-links {
+          display: none;
+        }
+        .project-content {
+          padding: 2rem;
+        }
+        .hero-actions {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="#" class="logo">Ibrahim<span>.</span>Dev</a>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-subtitle">Professional Portfolio</span>
+          <h1>Ibrahim Hamadoun Macinanké</h1>
+          <h2>
+            Senior Full-Stack Developer & IT Maintenance Expert (10+ Years
+            Experience)
+          </h2>
+          <p>
+            I design scalable software architectures, high-performance APIs, and
+            intelligent automation solutions that boost business productivity.
+            With over 10 years of combined experience in the IT ecosystem
+            (maintenance, hardware, networking) and 4+ years in application
+            development, I build bridges between hardware engineering, software
+            development, and real-world business needs.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Explore My Work</a>
+            <a href="#experience" class="btn btn-secondary">View My Career</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <div class="container">
+        <h2>About My Background</h2>
+        <p>
+          Backed by a solid background of over 10 years in the IT ecosystem
+          (including hardware/software maintenance, network administration, and
+          technical support) and over 4 years in web and mobile application
+          development, I handle the complete lifecycle of technological
+          projects.
+        </p>
+        <p>
+          My dual background as a Full-Stack Developer, seasoned systems &
+          networks technician, and University Lecturer (Algorithmics, AI, and
+          Robotics) has forged a rigorous vision regarding code quality, robust
+          architectures, and hardware maintenance. I am also a professional
+          Trilingue Interpreter, fluent in French, English (C1 Advanced - EF SET
+          Certified), and Mandarin Chinese (HSK 5 level). This asset allows me
+          to seamlessly collaborate within multidisciplinary and international
+          remote teams.
+        </p>
+        <p>
+          Holding university degrees in computer science and technology obtained
+          in Mali and China, I am driven by human-centered innovation and the
+          creation of global technological solutions, ranging from hardware
+          components down to the final software user experience.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <div class="container">
+        <h2>Technical Expertise & Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <ul class="skill-list">
+              <li>JavaScript ES6+ / ES Modules</li>
+              <li>React.js & Responsive SPA Interfaces</li>
+              <li>HTML5 / CSS3 / Bootstrap 5</li>
+              <li>UI/UX & Interactive Canvas API</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Backend & API</h3>
+            <ul class="skill-list">
+              <li>Node.js / Express.js</li>
+              <li>RESTful API Design</li>
+              <li>JWT Authentication & Security</li>
+              <li>Python & PHP</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Databases</h3>
+            <ul class="skill-list">
+              <li>MongoDB / Mongoose (Advanced Modeling)</li>
+              <li>MySQL (Relational Databases)</li>
+              <li>SQLite / SQLAlchemy</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>AI, Data & Audio</h3>
+            <ul class="skill-list">
+              <li>Local LLM Deployment (Llama 3, DeepSeek via GGUF/Ollama)</li>
+              <li>Prompt Engineering & GPT Wrappers</li>
+              <li>Stable Diffusion & ONNX Runtime</li>
+              <li>Audio Processing (UVR5, iZotope RX) & NLP</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Mobile</h3>
+            <ul class="skill-list">
+              <li>Flutter (Dart)</li>
+              <li>React Native</li>
+              <li>Android Studio</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>IT Maintenance & DevOps (10+ yrs)</h3>
+            <ul class="skill-list">
+              <li>
+                Advanced IT Maintenance & Hardware/Software Troubleshooting
+              </li>
+              <li>
+                Network Configuration & Security (Routers, Wi-Fi, Firewalls,
+                WDS)
+              </li>
+              <li>Smartphone Repair & Maintenance (Android, iOS)</li>
+              <li>
+                Enterprise SSD Cloning (Paragon), FTP/SFTP, Servers &
+                Administration
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+      <div class="container">
+        <h2>Professional Experience (10+ yrs IT & 4+ yrs Dev)</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">May 2026 - Present</span>
+            <h3 class="timeline-title">
+              Bilingual Developer & Trilingual Interpreter
+            </h3>
+            <div class="timeline-company">IE POWER, Abidjan</div>
+            <div class="timeline-content">
+              <ul>
+                <li>
+                  Trilingual interpretation (Chinese-French-English) to
+                  facilitate high-level technical and operational
+                  communications.
+                </li>
+                <li>
+                  Development of a bilingual digital inventory management and
+                  delivery validation system for warehouses.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2025 - 2026</span>
+            <h3 class="timeline-title">
+              University Teacher (AI, Robotics, Algo & Web)
+            </h3>
+            <div class="timeline-company">
+              University School of Technology and Management (EUTG), Bamako
+            </div>
+            <div class="timeline-content">
+              <ul>
+                <li>
+                  Bachelor 1 (L1): Teaching fundamental concepts in Algorithmics
+                  and Python programming.
+                </li>
+                <li>
+                  Bachelor 2 (L2): Delivery of theoretical and practical courses
+                  in Artificial Intelligence and Robotics.
+                </li>
+                <li>
+                  Bachelor 3 (L3): Facilitation of advanced practical workshops
+                  focused on electronics, Arduino design, and AI IoT/TinyML
+                  integration.
+                </li>
+                <li>
+                  Common Core: Cross-disciplinary teaching of Web Technology
+                  modules.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">August - September 2025</span>
+            <h3 class="timeline-title">
+              Full-Stack Developer / Automation Engineer
+            </h3>
+            <div class="timeline-company">MALI DEVELOPPEUR SARL</div>
+            <div class="timeline-content">
+              <ul>
+                <li>
+                  Design of robust architecture and backend logic for SaaS
+                  applications.
+                </li>
+                <li>
+                  Full responsibility for Full-Stack development for a solution
+                  dedicated to automated bulk messaging campaigns.
+                </li>
+                <li>
+                  Development of a complete Marketing Automation tool enabling
+                  scheduling and automated broadcasting on social media.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">January 2023 - March 2025</span>
+            <h3 class="timeline-title">
+              Full Stack Web Developer & LMS Manager
+            </h3>
+            <div class="timeline-company">EUTG, Bamako</div>
+            <div class="timeline-content">
+              <ul>
+                <li>
+                  End-to-end technical administration and web development for
+                  the Chamilo e-learning platform (PHP/MySQL).
+                </li>
+                <li>
+                  Development and maintenance of the institutional course
+                  information website.
+                </li>
+                <li>
+                  Continuous improvement of user experience (UX) and integration
+                  of digital pedagogical solutions.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2023 - Present</span>
+            <h3 class="timeline-title">
+              IT Maintenance and Support Technician
+            </h3>
+            <div class="timeline-company">Mali</div>
+            <div class="timeline-content">
+              <ul>
+                <li>
+                  Comprehensive technical support, hardware/software
+                  diagnostics, and daily assistance to end-users to ensure
+                  smooth IT operations.
+                </li>
+                <li>
+                  Hardware upgrades, enterprise SSD cloning (Enterprise SSD via
+                  Paragon), and wireless local network configuration (WDS
+                  bridging, routers).
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2015 - 2022</span>
+            <h3 class="timeline-title">
+              Cybercafe Manager & IT Maintenance Technician
+            </h3>
+            <div class="timeline-company">Mali</div>
+            <div class="timeline-content">
+              <ul>
+                <li>
+                  Installation, configuration, and maintenance of operating
+                  systems, office software, and licensed antivirus tools.
+                </li>
+                <li>
+                  Configuration and securing of computer networks (routers,
+                  Wi-Fi, firewalls).
+                </li>
+                <li>
+                  Replacement, repair, and upgrading of computer hardware
+                  components.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2014</span>
+            <h3 class="timeline-title">
+              Smartphone Repair and Maintenance Technician
+            </h3>
+            <div class="timeline-company">Mali</div>
+            <div class="timeline-content">
+              <ul>
+                <li>
+                  Unlocking, flashing, and software maintenance of smartphones
+                  (Android, Nokia, Samsung, LG).
+                </li>
+                <li>
+                  Mobile operating system repair, error correction, and
+                  performance optimization.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <div class="container">
+        <h2>Case Studies: Projects & Technical Achievements</h2>
+        <div class="projects-grid">
+          <!-- Project 1 : WhatsApp Automation -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Cloud Messaging Automation System</span
+              >
+              <h3 class="project-title">
+                WhatsApp Business Automation Platform
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">MongoDB / Mongoose</span>
+                <span class="tech-tag">Meta Graph API v17.0</span>
+                <span class="tech-tag">node-cron</span>
+                <span class="tech-tag">JWT</span>
+              </div>
+              <p class="project-description">
+                Full-stack web SaaS platform designed for automated bulk
+                messaging and comprehensive campaign management via Meta's
+                official WhatsApp Cloud API. Built to allow businesses to engage
+                customers without blockages while handling large contact
+                databases.
+              </p>
+              <div class="project-architecture">
+                <h4>Architecture & Technical Challenges</h4>
+                <ul>
+                  <li>
+                    <strong>Atomic Anti-Duplicate Scheduler:</strong>
+                    Implementation of a cron job with database locking (atomic
+                    <code>findOneAndUpdate</code> operation) to guarantee zero
+                    concurrency race conditions or double messaging.
+                  </li>
+                  <li>
+                    <strong>Hybrid Modeling:</strong> Advanced Mongoose schema
+                    handling paginated CSV file imports, nested reference
+                    storage, and international phone number normalization on the
+                    fly.
+                  </li>
+                  <li>
+                    <strong>Real-Time Observability:</strong> Aggregated
+                    tracking architecture generating granular delivery and error
+                    metrics through a dedicated "MessageStat" logging model.
+                  </li>
+                  <li>
+                    <strong>Document Management:</strong> Dynamic draft
+                    persistence and SPA user interface allowing real-time
+                    preview and media detachment via Multer and Axios.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 : Marketing Automation AI -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Marketing Automation & Content Engine</span
+              >
+              <h3 class="project-title">Marketing Automation & AI Suite</h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">React / PyQt5</span>
+                <span class="tech-tag">LLM / Prompts</span>
+                <span class="tech-tag">Stable Diffusion / ONNX</span>
+                <span class="tech-tag">Canvas API</span>
+              </div>
+              <p class="project-description">
+                An advanced software suite combining classical marketing
+                automation with the power of generative Artificial Intelligence,
+                streamlining multi-format campaign creation without requiring
+                complex design skills.
+              </p>
+              <div class="project-architecture">
+                <h4>Key Mechanics & Features</h4>
+                <ul>
+                  <li>
+                    <strong>Multimodal Generation:</strong> Integration of AI
+                    engines (structured language models) for multilingual
+                    copywriting (slogans, emails) directly within a centralized
+                    editor.
+                  </li>
+                  <li>
+                    <strong>Canvas & Image Processing:</strong> Connection of an
+                    ONNX Runtime optimized Stable Diffusion model to an
+                    interactive Canvas enabling real-time resizing, branding,
+                    watermarking, and multi-resolution exporting (1080x1080,
+                    1920x1080).
+                  </li>
+                  <li>
+                    <strong>Short Video Pipeline:</strong> Generation and export
+                    of short vertical videos optimized for social media (Reels,
+                    TikTok, Shorts) coupled with automated direct publishing.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 : SuperTuteur -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type">AI-Powered Educational Platform</span>
+              <h3 class="project-title">
+                Intelligent AI Tutoring System (SuperTuteur)
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OpenAI GPT</span>
+                <span class="tech-tag">NLP (Natural Language Processing)</span>
+                <span class="tech-tag">Speech Recognition</span>
+                <span class="tech-tag">SQLite / DB Management</span>
+              </div>
+              <p class="project-description">
+                Adaptive learning software platform driven by Artificial
+                Intelligence, designed to model the behavior of an interactive
+                human tutor. The application evaluates in real time, understands
+                the learner's natural language, and adapts pedagogical
+                responses.
+              </p>
+              <div class="project-architecture">
+                <h4>Core Architecture & Engineering</h4>
+                <ul>
+                  <li>
+                    <strong>Adaptive Learning Engine:</strong> Development of a
+                    modular "Adaptive Engine" capable of calibrating exercise
+                    difficulty and guiding the educational path based on
+                    tracking data ("Progress Tracker") stored via the database
+                    layer.
+                  </li>
+                  <li>
+                    <strong>NLP & Generative AI Processor:</strong> Integration
+                    of a secure GPT wrapper combined with a local NLP processor
+                    to analyze learner intent, extract context, and formulate
+                    precise didactic responses.
+                  </li>
+                  <li>
+                    <strong>Multimodal Interface:</strong> User interface
+                    coupled with a voice-processing utility ("Speech utils")
+                    facilitating voice-text interaction for maximum learning
+                    accessibility.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 : Plateforme Web IA -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type">Web Community Platform</span>
+              <h3 class="project-title">AI Community Web Platform</h3>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Bootstrap 5</span>
+                <span class="tech-tag">EmailJS</span>
+                <span class="tech-tag">CSS Animations</span>
+              </div>
+              <p class="project-description">
+                Design and development of an institutional platform dedicated to
+                the promotion, training, and democratization of Artificial
+                Intelligence technologies.
+              </p>
+              <div class="project-architecture">
+                <h4>Technical Details</h4>
+                <ul>
+                  <li>
+                    <strong>Fluid Interface:</strong> Creation of a modern
+                    showcase using Bootstrap 5, dynamic carousels, and media
+                    queries to ensure flawless responsiveness across mobile and
+                    desktop devices.
+                  </li>
+                  <li>
+                    <strong>Serverless Architecture:</strong> Secure integration
+                    of the EmailJS service to handle complex contact forms
+                    without maintaining a backend infrastructure, reducing
+                    server costs.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 5 : IA Mali (aimali.org) -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type">Institutional Web Platform</span>
+              <h3 class="project-title">IA Mali (IcoTechUnivers)</h3>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">SSL / TLS Configuration</span>
+                <span class="tech-tag">UI / UX Design</span>
+                <span class="tech-tag">Assets Management</span>
+              </div>
+              <p class="project-description">
+                Structured web platform featuring advanced security certificate
+                management and a rich media library (images and icons) dedicated
+                to the IcoTechUnivers initiative.
+              </p>
+              <div class="project-architecture">
+                <h4>Technical Details</h4>
+                <ul>
+                  <li>
+                    <strong>Security & Deployment:</strong> Integration and
+                    validation of SSL certificates (via
+                    <code>.well-known/pki-validation</code>) to ensure data
+                    integrity and user connection security.
+                  </li>
+                  <li>
+                    <strong>Asset Management:</strong> Structuring a vast media
+                    directory (<code>assets/iamaliimages/</code>,
+                    <code>assets/improvelife/</code>) optimized for fast
+                    site-wide loading times.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 6 : React Date Counter -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type">Single Page Application (SPA)</span>
+              <h3 class="project-title">React Date Counter</h3>
+              <div class="tech-tags">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">Create React App</span>
+                <span class="tech-tag">Jest / Testing Library</span>
+              </div>
+              <p class="project-description">
+                Interactive frontend application developed with React to
+                calculate future or past dates based on a dynamic counter with
+                an adjustable step multiplier.
+              </p>
+              <div class="project-architecture">
+                <h4>Technical Details</h4>
+                <ul>
+                  <li>
+                    <strong>State Logic:</strong> Advanced use of React hooks
+                    (<code>useState</code>) to manage progression steps and
+                    increments, updating the DOM in real time.
+                  </li>
+                  <li>
+                    <strong>Date Manipulation:</strong> Native JavaScript date
+                    calculation algorithms (<code>Date</code>) based on a
+                    dynamic reference point.
+                  </li>
+                  <li>
+                    <strong>Environment & Testing:</strong> Initialized via
+                    Create React App, featuring automated test configurations
+                    using Jest and React Testing Library.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 7 : Plateforme Web EUTG -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type">Front-End / Landing Page</span>
+              <h3 class="project-title">EUTG Learning Platform</h3>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Swiper.js</span>
+                <span class="tech-tag">ScrollReveal.js</span>
+                <span class="tech-tag">RemixIcon</span>
+              </div>
+              <p class="project-description">
+                Front-end development of a responsive landing page for the EUTG
+                learning platform, highlighting course structures, school
+                features, and student testimonials with a distinct visual
+                identity.
+              </p>
+              <div class="project-architecture">
+                <h4>Technical Details & UI/UX</h4>
+                <ul>
+                  <li>
+                    <strong>Animations & Interactivity:</strong> Implementation
+                    of smooth scroll animations via ScrollReveal, dynamic
+                    ScrollSpy for navigation, and back-to-top functionality.
+                  </li>
+                  <li>
+                    <strong>Touch Components:</strong> Configuration of an
+                    interactive carousel for testimonials using the Swiper
+                    library.
+                  </li>
+                  <li>
+                    <strong>Modern Layout:</strong> Advanced CSS Grid
+                    structuring, implementation of theme variables
+                    (orange/gray), and integration of Remixicon icons.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 8 : Carte de Profil Interactive React -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type">React Component / Interactive UI</span>
+              <h3 class="project-title">Interactive Profile Card</h3>
+              <div class="tech-tags">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">CSS3 / IBM Plex Mono</span>
+                <span class="tech-tag">JSX</span>
+              </div>
+              <p class="project-description">
+                Modular React-based application displaying an interactive
+                professional profile card, highlighting a customized biography
+                and dynamic skill badge system enriched with proficiency levels
+                and eco-reactive visual indicators.
+              </p>
+              <div class="project-architecture">
+                <h4>Technical Details & Architecture</h4>
+                <ul>
+                  <li>
+                    <strong>Component Architecture:</strong> Rigorous breakdown
+                    into reusable sub-components (<code>ImgDeAvatarFt</code>,
+                    <code>IntroductionFt</code>,
+                    <code>ListeDeCompétencesFt</code>,
+                    <code>CompétenceFt</code>).
+                  </li>
+                  <li>
+                    <strong>Dynamic Data Rendering:</strong> Use of object
+                    arrays to map and dynamically inject skills, theme colors,
+                    and conditional emojis reflecting levels (beginner,
+                    intermediate, advanced).
+                  </li>
+                  <li>
+                    <strong>Typography & Custom Styling:</strong> Integration of
+                    the "IBM Plex Mono" Google Font, a flexible layout
+                    (<code>flex-wrap</code>), and a clean design focused on user
+                    experience.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 9 : Omoiavie - Abonnement Alimentaire IA -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Web App / Landing Page & AI Platform</span
+              >
+              <h3 class="project-title">Omoiavie - AI Food Subscription</h3>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">Intersection Observer API</span>
+                <span class="tech-tag">Responsive Design</span>
+                <span class="tech-tag">Modern UI/UX</span>
+              </div>
+              <p class="project-description">
+                Development of a complete, responsive web platform (immersive
+                landing page) for "Omoiavie", an AI-driven smart meal
+                subscription service running 365 days a year. The application
+                integrates customized diet selections, weekly meal plans,
+                dynamic pricing grids, and interactive delivery management.
+              </p>
+              <div class="project-architecture">
+                <h4>Technical Details & Features</h4>
+                <ul>
+                  <li>
+                    <strong>Modular CSS Architecture:</strong> Rigorous style
+                    organization (general, structure, media queries) with
+                    advanced grid systems and warm-toned design variables.
+                  </li>
+                  <li>
+                    <strong>Navigation & JS Performance:</strong> Implementation
+                    of a high-performance sticky header via the
+                    <code>IntersectionObserver</code> API, dynamic copyright
+                    year handling, and smooth scrolling.
+                  </li>
+                  <li>
+                    <strong>Conversion & Engagement:</strong> Integration of
+                    testimonial sections, culinary photo galleries, multi-tier
+                    subscription plans, and an optimized signup form for client
+                    acquisition.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 10 : Little Lemon - Restaurant Django App -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Full-Stack Web App / Django Framework</span
+              >
+              <h3 class="project-title">
+                Little Lemon - Restaurant & Booking Web App
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Python / Django</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">Django Forms & Admin</span>
+                <span class="tech-tag"
+                  >HTML5 / CSS3 (Karla & Markazi Text)</span
+                >
+                <span class="tech-tag">Django Templates & Partials</span>
+              </div>
+              <p class="project-description">
+                Development of a full-stack web application for the
+                Mediterranean restaurant "Little Lemon", structured around five
+                core pages: Home, About, Booking, Menu, and Menu Item Detail.
+                The project features a robust admin interface for dynamic dish
+                management and an online table reservation system.
+              </p>
+              <div class="project-architecture">
+                <h4>Back-End & Front-End Architecture</h4>
+                <ul>
+                  <li>
+                    <strong>Business Modeling (Django ORM):</strong> Design of
+                    <code>Menu</code> (name, price, description) and
+                    <code>Booking</code> (client info, guest count, comments)
+                    models paired with incremental migrations.
+                  </li>
+                  <li>
+                    <strong>Views & Forms Management:</strong> Implementation of
+                    routing views, dynamic reservation forms based on
+                    <code>ModelForm</code>, and catalog/detail views via primary
+                    keys (<code>pk</code>).
+                  </li>
+                  <li>
+                    <strong>Template Design & Modularity:</strong> Utilization
+                    of a base template (<code>base.html</code>) combined with
+                    modular partials (header and footer) styled using Google
+                    Fonts <em>Karla</em> and <em>Markazi Text</em>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 11 : Travel List / Far Away - React SPA -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Single Page Application (SPA) / React</span
+              >
+              <h3 class="project-title">
+                Travel List (Far Away) - Travel Management
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">React Hooks (useState)</span>
+                <span class="tech-tag"
+                  >CSS3 (Google Fonts: Monoton & Quicksand)</span
+                >
+              </div>
+              <p class="project-description">
+                Interactive web application for packing list management (*Far
+                Away*), enabling users to easily add, check off, sort, and
+                delete travel items. The application integrates real-time
+                statistical tracking of packing completion rates.
+              </p>
+              <div class="project-architecture">
+                <h4>Architecture & Application Logic</h4>
+                <ul>
+                  <li>
+                    <strong>Component Architecture:</strong> Clean, modular
+                    breakdown into reusable components (<code>Logo</code>,
+                    <code>Form</code>, <code>PackingList</code>,
+                    <code>Item</code>, <code>Stats</code>).
+                  </li>
+                  <li>
+                    <strong>Centralized State Management:</strong> Use of the
+                    <code>useState</code> hook in the root component to handle
+                    item addition, deletion, and toggle status.
+                  </li>
+                  <li>
+                    <strong>Sorting Algorithms & Statistics:</strong>
+                    Multi-criteria sorting implementation (by input order,
+                    alphabetical description, or packed status) coupled with a
+                    dynamic statistics footer computing completion percentages.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 12 : Formulaire de Contact Sécurisé (SMTP.js) -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Front-End / Email API Integration</span
+              >
+              <h3 class="project-title">Dynamic & Secure Contact Form</h3>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">SMTP.js</span>
+                <span class="tech-tag">Elastic Email API</span>
+              </div>
+              <p class="project-description">
+                Professional and responsive contact interface featuring
+                real-time field validation and an asynchronous direct front-end
+                email delivery system using SMTP.js and the Elastic Email
+                service.
+              </p>
+              <div class="project-architecture">
+                <h4>Architecture & Features</h4>
+                <ul>
+                  <li>
+                    <strong>Modern Dark Theme Interface:</strong> Polished
+                    visual design using an elegant color palette (#1f242d),
+                    dynamic glowing borders (#0ef), and Poppins typography.
+                  </li>
+                  <li>
+                    <strong>Validation & Error Handling:</strong> Comprehensive
+                    form structure managing required fields (name, email, phone,
+                    subject, message) with integrated contextual error blocks.
+                  </li>
+                  <li>
+                    <strong>Asynchronous Email Transmission:</strong> Submission
+                    event handling script preventing page reload
+                    (<code>preventDefault</code>) and formatting message bodies
+                    for secure dispatch via remote SMTP protocol.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 13 : Calculateur d'Amortissement de Prêt (Flask / XOF / WinDev API) -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Back-End & REST API / Flask / Python</span
+              >
+              <h3 class="project-title">
+                Loan Amortization Calculator & API (XOF)
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Python / Flask</span>
+                <span class="tech-tag">Blueprint / REST API</span>
+                <span class="tech-tag">Decimal Precision</span>
+                <span class="tech-tag">Bootstrap UI</span>
+                <span class="tech-tag">WinDev / WLanguage Integration</span>
+              </div>
+              <p class="project-description">
+                Web application and REST API for financial calculation and loan
+                amortization configured for West African CFA franc (XOF). The
+                system supports multiple payment frequencies (monthly,
+                quarterly, semi-annual, annual) and provides complete
+                documentation for external integration with environments like
+                WinDev.
+              </p>
+              <div class="project-architecture">
+                <h4>Financial Engineering & Architecture</h4>
+                <ul>
+                  <li>
+                    <strong>Financial Precision (Decimal):</strong> Rigorous
+                    mathematical algorithms implemented via Python's
+                    <code>Decimal</code> type and normalized rounding
+                    (<code>ROUND_HALF_UP</code>) to eliminate rounding drift on
+                    amortization schedules.
+                  </li>
+                  <li>
+                    <strong>Structured REST API Endpoints:</strong> Use of Flask
+                    Blueprints to expose modular JSON endpoints
+                    (<code>/api/calculer</code>,
+                    <code>/api/montant-paiement</code>,
+                    <code>/api/interet-total</code>) with strict input
+                    validation and HTTP error code handling.
+                  </li>
+                  <li>
+                    <strong>Web Interface & WinDev Guide:</strong> Complete web
+                    app with custom Jinja filters for French currency
+                    formatting, tailored error pages (404, 500), and examples of
+                    native WLanguage (WinDev) calls.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 14 : Mali Tourisme - Agence de Promotion Touristique -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Multi-Pages Web App / HTML5 & Bootstrap</span
+              >
+              <h3 class="project-title">
+                Mali Tourisme - Tourist Promotion Portal
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">Bootstrap 5</span>
+                <span class="tech-tag">Responsive Navigation & Submenus</span>
+                <span class="tech-tag"
+                  >Multimedia Integration (Audio/Video)</span
+                >
+              </div>
+              <p class="project-description">
+                Multi-page institutional web portal developed for the Mali
+                Tourism Promotion Agency, highlighting the country's historical,
+                cultural, and geographical richness. The site features an
+                advanced hierarchical navigation system, dynamic multimedia
+                sections (cultural videos and traditional audio excerpts), a
+                Director's message, practical guides ("The Must-Sees"), and
+                dedicated contact forms.
+              </p>
+              <div class="project-architecture">
+                <h4>Portal Architecture & Features</h4>
+                <ul>
+                  <li>
+                    <strong>Multi-Page Architecture & Navigation:</strong>
+                    Design of a fully interconnected site (Home, Mali, Discover,
+                    Stay, Practical, Gallery, Contact) equipped with smooth
+                    submenus and ergonomic structure.
+                  </li>
+                  <li>
+                    <strong>Bootstrap & Custom Styles:</strong> Combined use of
+                    Bootstrap 5 framework and a dedicated stylesheet
+                    (<code>styles_2.css</code>) ensuring adaptive design,
+                    elegant card grids, and hover effects on buttons.
+                  </li>
+                  <li>
+                    <strong>Immersive Multimedia Experience:</strong>
+                    Integration of native HTML5 video and audio tags to energize
+                    the discovery of Malian heritage and offer an interactive
+                    visitor showcase.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 15 : Moto-Taxi Connect - Flutter Mobile App -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Mobile Application / Flutter, Google Maps & Firebase</span
+              >
+              <h3 class="project-title">
+                Moto-Taxi Connect - Mobile Transport App
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Flutter / Dart</span>
+                <span class="tech-tag">Google Maps API</span>
+                <span class="tech-tag">Firebase Backend</span>
+                <span class="tech-tag">Android / iOS / Web</span>
+              </div>
+              <p class="project-description">
+                End-to-end development from scratch of a mobile ride-hailing
+                application for on-demand moto-taxi services. The app features
+                dual separate interfaces (user rider interface and client/driver
+                interface), coupled with an interactive Google Maps module for
+                real-time geolocation of nearby services.
+              </p>
+              <div class="project-architecture">
+                <h4>Architecture, Deployment & Budgeting</h4>
+                <ul>
+                  <li>
+                    <strong>End-to-End Conception:</strong> Full mastery of
+                    mobile app creation from scratch, including screen
+                    architecture and ride-matching business logic.
+                  </li>
+                  <li>
+                    <strong>Dual Interface (User & Driver):</strong>
+                    Implementation of targeted, smooth experiences separating
+                    passenger ride requests from the driver management
+                    workspace.
+                  </li>
+                  <li>
+                    <strong>Hosting, Mapping & Budget:</strong> Comprehensive
+                    hands-on experience covering Google Maps implementation and
+                    hosting, Firebase configuration for full cloud
+                    synchronization and deployment, alongside rigorous budget
+                    evaluation and calculation.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 16 : Atelier Robotique & IoT : Système de Feux Tricolores Arduino -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Embedded Systems / IoT / Robotics Workshop</span
+              >
+              <h3 class="project-title">
+                Arduino Robotics & IoT Workshop: Traffic Light System
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Arduino / C++</span>
+                <span class="tech-tag">mBlock 3 (Block Programming)</span>
+                <span class="tech-tag">Electronics / Breadboard</span>
+                <span class="tech-tag">LEDs & Resistors</span>
+              </div>
+              <p class="project-description">
+                Design, wiring, and programming of an intelligent traffic light
+                system (Red, Orange, Green) on an Arduino microcontroller. This
+                educational and technical project covers physical breadboard
+                assembly, embedded C++ code via Arduino IDE, and algorithmic
+                equivalence using functional blocks in mBlock 3.
+              </p>
+              <div class="project-architecture">
+                <h4>Hardware Architecture & Embedded Logic</h4>
+                <ul>
+                  <li>
+                    <strong>Secure Electronic Setup:</strong> Connection of 3
+                    LEDs (Red on digital pin 10, Orange on pin 9, Green on pin
+                    8) protected by 220/330 ohm resistors and grounded to GND.
+                  </li>
+                  <li>
+                    <strong>C++ Logic (Arduino IDE):</strong> Structured
+                    implementation via <code>setup()</code> and
+                    <code>loop()</code> functions combining digital write
+                    instructions (<code>digitalWrite</code>) with precise
+                    sequential timing via delays (3s Red, 3s Green, 1s Orange).
+                  </li>
+                  <li>
+                    <strong>Pedagogy & Block Programming (mBlock 3):</strong>
+                    Translating algorithms into nested logical blocks within an
+                    infinite loop ("forever loop") to facilitate automation
+                    learning for students.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 17 : Atelier Lampe de Jardin Automatique (Arduino & Capteur LDR) -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Embedded Systems / IoT / Analog Sensors</span
+              >
+              <h3 class="project-title">
+                Automatic Garden Lamp Workshop (Arduino & LDR Sensor)
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Arduino / C++</span>
+                <span class="tech-tag">Analog Sensor (A0 / LDR)</span>
+                <span class="tech-tag">Voltage Divider (10kΩ / 220Ω)</span>
+                <span class="tech-tag">Serial Monitor & Hysteresis</span>
+              </div>
+              <p class="project-description">
+                Design of an intelligent automated garden lamp system capable of
+                detecting ambient light drop (nightfall) to autonomously switch
+                a LED on or off. This educational workshop practices analog
+                sensor reading, decision threshold calculations (<code
+                  >if/else</code
+                >
+                structures), and hardware management of optical interference
+                (hysteresis).
+              </p>
+              <div class="project-architecture">
+                <h4>Hardware, Electronics & C++ Logic</h4>
+                <ul>
+                  <li>
+                    <strong>Voltage Divider & Analog Inputs:</strong> Use of a
+                    photoresistor (LDR) paired with a 10 kΩ pull-down resistor
+                    (brown-black-orange) connected to analog pin
+                    <code>A0</code>, translating light variations into stable
+                    digital values (0 to 1023).
+                  </li>
+                  <li>
+                    <strong>Output Circuit & Load Control:</strong> Wiring a
+                    garden LED to digital pin <code>8</code> configured as an
+                    output (<code>OUTPUT</code>), protected by a 220 Ω resistor
+                    (red-red-brown).
+                  </li>
+                  <li>
+                    <strong>Debugging & Hysteresis Optimization:</strong>
+                    Real-time calibration using the Serial Monitor (9600 baud)
+                    and software implementation of a dead zone (hysteresis with
+                    distinct thresholds at 30 and 60) to eliminate flickering
+                    caused by optical feedback loop.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 18 : Atelier Détection d'Obstacle par Ultrasons (HC-SR04 & Arduino) -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Embedded Systems / IoT / Distance Measurement</span
+              >
+              <h3 class="project-title">
+                Ultrasonic Obstacle Detection Workshop (HC-SR04)
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Arduino / C++</span>
+                <span class="tech-tag">HC-SR04 Ultrasonic Sensor</span>
+                <span class="tech-tag"
+                  >Time-of-Flight & Distance Conversion</span
+                >
+                <span class="tech-tag"
+                  >Comparative Analysis (IR vs Ultrasound)</span
+                >
+              </div>
+              <p class="project-description">
+                Design, wiring, and programming of a distance measurement and
+                ultrasonic obstacle detection system using the HC-SR04 module
+                with an Arduino board. This project encompasses mathematical
+                time-of-flight calculations, Trig/Echo pin management, and a
+                technical comparative study between infrared (KY-033) and
+                ultrasonic sensors for robotic navigation.
+              </p>
+              <div class="project-architecture">
+                <h4>Architecture, Algorithms & Comparative Study</h4>
+                <ul>
+                  <li>
+                    <strong>Hardware Setup & Wiring:</strong> Connecting the
+                    HC-SR04 sensor (VCC to 5V, GND to ground, Trig on digital
+                    pin 13 as emitter, Echo on pin 12 as receiver) coupled with
+                    an alert LED on pin 6 (protected by a 220 Ω resistor).
+                  </li>
+                  <li>
+                    <strong>Time-of-Flight & C++ Algorithm:</strong> Sending a
+                    10-microsecond ultrasonic pulse on Trig, measuring echo
+                    duration via <code>pulseIn(echo, HIGH)</code>, and
+                    converting to centimeters (<code
+                      >distance = duration * 0.034 / 2</code
+                    >) to trigger the LED alert below a 20 cm critical
+                    threshold.
+                  </li>
+                  <li>
+                    <strong>Infrared (KY-033) vs Ultrasound (HC-SR04):</strong>
+                    Technical evaluation demonstrating that infrared is optimal
+                    for line tracking (short range, color sensitivity) while
+                    HC-SR04 excels in navigation and volume obstacle avoidance
+                    over long ranges up to 4 meters.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 19 : Atelier Découverte de la motorisation (Servomoteur SG90) -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Embedded Systems / Robotics / Actuators</span
+              >
+              <h3 class="project-title">SG90 Servo Motor Discovery Workshop</h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Arduino / C++</span>
+                <span class="tech-tag">SG90 Servo Motor</span>
+                <span class="tech-tag">Servo.h Library</span>
+                <span class="tech-tag">PWM Signal (Pin 9)</span>
+              </div>
+              <p class="project-description">
+                Design and control of an SG90 servo motor on an Arduino board to
+                understand the fundamental distinction between a conventional
+                rotary motor and a servo motor controlled via precise angular
+                positioning (0° to 180°). The workshop covers 3-wire cabling,
+                C++ <code>Servo.h</code> library utilization for simplified PWM
+                signal generation, and practical applications in robotic arms or
+                automated gates.
+              </p>
+              <div class="project-architecture">
+                <h4>Hardware Architecture & PWM Control Logic</h4>
+                <ul>
+                  <li>
+                    <strong>Simplified 3-Wire Connection:</strong> Direct
+                    connection of the servo motor without complex breadboards
+                    (Brown/Black wire to Arduino GND, Red wire to 5V VCC,
+                    Orange/Yellow signal wire connected to PWM digital pin 9
+                    marked '~').
+                  </li>
+                  <li>
+                    <strong>Servo.h Library Integration:</strong> Utilizing the
+                    <code>Servo</code> class to instantiate a virtual object
+                    (<code>monMoteur</code>), initializing hardware linking in
+                    <code>setup()</code> via
+                    <code>monMoteur.attach(9)</code> without manually coding
+                    complex square waves.
+                  </li>
+                  <li>
+                    <strong>Angular Positioning Sequence:</strong> Programming
+                    the main <code>loop()</code> function to command precise
+                    angular increments (0°, 90°, then 180°) separated by
+                    one-second delays to illustrate positional holding
+                    stability.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 20 : Projet Smart Gate v0 - Barrière Intelligente IoT -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Embedded Systems / IoT / Smart Infrastructure</span
+              >
+              <h3 class="project-title">
+                Smart Gate v0 - IoT Smart Barrier Project
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Arduino / C++</span>
+                <span class="tech-tag">HC-SR04 Ultrasonic Sensor</span>
+                <span class="tech-tag">SG90 Servo Motor</span>
+                <span class="tech-tag">Power Management & Prototyping</span>
+              </div>
+              <p class="project-description">
+                Development of a complete smart automated barrier system ("Smart
+                Gate") combining ultrasonic presence detection and mechanical
+                servo motor actuation. This project merges sensor and actuator
+                learnings to simulate an automated access control system (toll
+                or parking gate) that opens when a vehicle approaches within 10
+                cm.
+              </p>
+              <div class="project-architecture">
+                <h4>System Architecture & Engineering Advice</h4>
+                <ul>
+                  <li>
+                    <strong>Integrated Setup & Wiring:</strong> Interconnection
+                    of the HC-SR04 sensor (Trig on pin 2, Echo on pin 3) and
+                    SG90 servo motor (PWM signal on pin 9, 5V power and GND via
+                    breadboard rails).
+                  </li>
+                  <li>
+                    <strong>Access Control Algorithm:</strong> Continuous
+                    distance measurement, Serial Monitor output (9600 baud), and
+                    decision logic triggering barrier opening (servo rotation to
+                    90°) for 3 seconds upon detecting an object within 0-10 cm,
+                    with automatic return to closed position (0°) when clear.
+                  </li>
+                  <li>
+                    <strong>Hardware Engineering Recommendation:</strong>
+                    Highlighting best prototyping practices—while Arduino powers
+                    test prototypes (SG90) adequately, deployment in real
+                    industrial settings requires external high-power power
+                    supplies to prevent board destruction from current surges.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 21 : Atelier 7 - Smart Gate : Contrôle d'Accès par Digicode (Clavier 4x4) -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Embedded Systems / Industrial Security / Access Control</span
+              >
+              <h3 class="project-title">
+                Atelier 7: SMART GATE - Access Control via Keypad (4x4)
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Arduino / C++</span>
+                <span class="tech-tag">4x4 Matrix Keypad</span>
+                <span class="tech-tag">1602 LCD Screen & Potentiometer</span>
+                <span class="tech-tag"
+                  >Dual-Factor Security (Ultrasonic + PIN)</span
+                >
+              </div>
+              <p class="project-description">
+                Design and implementation of a dual-factor industrial security
+                system. Barrier opening (servo motor) is conditioned by combined
+                control: spatial vehicle detection via ultrasound (HC-SR04)
+                coupled with manual entry of a secure PIN code ("1234") on a 4x4
+                matrix keypad, featuring textual feedback on a 1602 LCD screen
+                and success/failure LED indicators.
+              </p>
+              <div class="project-architecture">
+                <h4>Hardware Architecture, HMI & Authentication Logic</h4>
+                <ul>
+                  <li>
+                    <strong>Advanced Peripheral Wiring:</strong> Integration of
+                    the 1602 LCD screen (contrast control via 10 kΩ
+                    potentiometer, RS/E control and D4-D7 data pins), 4x4 matrix
+                    keypad (rows on analog pins A0-A3 and columns on 8, 10, 13,
+                    A4), plus security indicators (green LED on A5, red LED on
+                    TX/1).
+                  </li>
+                  <li>
+                    <strong>Authentication & Masking Logic:</strong> Using the
+                    <code>Keypad.h</code> library to capture keystrokes, visual
+                    password masking using asterisks (<code>*</code>) on the LCD
+                    screen, and string validation via
+                    <code>strcmp(codeSaisi, codeSecret) == 0</code>.
+                  </li>
+                  <li>
+                    <strong>Operational Scenario:</strong> At rest, displaying
+                    "SAFE PARKING". Once a car positions within 10 cm, the
+                    system prompts for a PIN code. Upon success, the green LED
+                    lights up, the barrier opens to 90° for 4 seconds; upon
+                    failure, the red LED lights up and access is denied.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 22 : Atelier 7 - L'Entrée Numérique Fondamentale (Bouton-Poussoir & Pull-up) -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Embedded Systems / IoT / Digital Inputs</span
+              >
+              <h3 class="project-title">
+                Atelier 7: Fundamental Digital Input - Mastering the Push-Button
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Arduino / C++</span>
+                <span class="tech-tag">Digital Input</span>
+                <span class="tech-tag">Internal Pull-up Resistor</span>
+                <span class="tech-tag">Push-Button</span>
+              </div>
+              <p class="project-description">
+                Practical introductory workshop on digital inputs and proper
+                switch handling on an Arduino microcontroller. This project
+                teaches momentary push-button usage, floating pin prevention
+                using internal pull-up (<code>INPUT_PULLUP</code>), and onboard
+                LED output control.
+              </p>
+              <div class="project-architecture">
+                <h4>Hardware Architecture & Inverted Digital Logic</h4>
+                <ul>
+                  <li>
+                    <strong>Push-Button Wiring:</strong> Inserting the button
+                    across the breadboard's central divider, connecting one pin
+                    to GND and the opposite pin to Arduino digital pin 2.
+                  </li>
+                  <li>
+                    <strong
+                      >Internal Pull-up Management
+                      (<code>INPUT_PULLUP</code>):</strong
+                    >
+                    Activating Arduino's internal pull-up resistor to force the
+                    pin HIGH (5V) by default, eliminating extra breadboard
+                    components and inverting read logic (Button unpressed = HIGH
+                    / 1; Button pressed = LOW / 0).
+                  </li>
+                  <li>
+                    <strong>C++ Conditional Logic:</strong> Implementing
+                    continuous reading loops via <code>digitalRead()</code> and
+                    conditional statements (<code>if/else</code>) to control the
+                    onboard LED on pin 13 (detecting <code>LOW</code> state upon
+                    press to switch output <code>HIGH</code>).
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 23 : Atelier 7 - L'Entrée Numérique Classique (Résistance de Pull-down Externe) -->
+          <div class="project-card">
+            <div class="project-content">
+              <span class="project-type"
+                >Embedded Systems / IoT / Digital Inputs</span
+              >
+              <h3 class="project-title">
+                Atelier 7: Classic Digital Input - External Pull-down Resistor
+              </h3>
+              <div class="tech-tags">
+                <span class="tech-tag">Arduino / C++</span>
+                <span class="tech-tag">Digital Input (INPUT)</span>
+                <span class="tech-tag">External Pull-down Resistor (10kΩ)</span>
+                <span class="tech-tag">Direct Logic (HIGH/LOW)</span>
+              </div>
+              <p class="project-description">
+                Technical and practical study of digital input wiring on Arduino
+                using an external 10 kΩ pull-down resistor. Unlike internal
+                configuration, this physical setup explicitly anchors the signal
+                pin to low level (GND / 0V) at rest, establishing direct reading
+                logic (*Straight Logic*: Button pressed = HIGH / 1).
+              </p>
+              <div class="project-architecture">
+                <h4>Hardware Architecture & Direct Digital Logic</h4>
+                <ul>
+                  <li>
+                    <strong>Pull-down Resistor Principle:</strong> Inserting a
+                    10 kΩ resistor (brown-black-orange) between the signal pin
+                    (Pin 2) and ground (GND), acting as a drain to clear
+                    residual charges and maintain 0V until the button is
+                    activated.
+                  </li>
+                  <li>
+                    <strong>Detailed Physical Wiring:</strong> Powering
+                    breadboard rails (5V and GND), placing the push-button
+                    across the central groove, supplying 5V to one terminal,
+                    connecting signal wire to Arduino digital pin 2, and
+                    anchoring the pull-down resistor to the negative rail.
+                  </li>
+                  <li>
+                    <strong>Straight Logic in C++:</strong> Configuring the pin
+                    in standard mode (<code>pinMode(pinBouton, INPUT)</code>)
+                    and applying direct conditional processing via
+                    <code>digitalRead()</code>, where <code>HIGH</code> (1)
+                    distinctly corresponds to button actuation to activate the
+                    LED output.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+      <div class="container">
+        <p>
+          © 2026 Ibrahim Hamadoun Macinanké. Full-Stack Developer, AI Engineer &
+          IT Systems Technician. Designed with passion and technical precision.
+        </p>
+        <p>
+          Based in Abidjan, Côte d'Ivoire. Available for remote international
+          opportunities.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
