@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Ibrahim Hamadoun Macinanké - Senior Full-Stack Developer & AI / Marketing Automation Specialist."
+      content="Portfolio of Ibrahim Hamadoun Macinanké - Full-Stack Software Developer, AI & Automation Engineer, Trilingual Chinese–French–English Interpreter."
     />
     <title>
-      Ibrahim Hamadoun Macinanké | Senior Full-Stack Developer Portfolio
+      Ibrahim Hamadoun Macinanké | Full-Stack Software Developer & AI Engineer
     </title>
     <style>
       /* CSS Variables for a Premium & Modern Design */
@@ -175,6 +175,47 @@
         user-select: none;
       }
 
+      /* Hire Me Button */
+      .btn-hire {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.55rem 1.2rem;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(135deg, #0ea5e9, #2563eb);
+        box-shadow: 0 4px 15px var(--accent-glow);
+        transition: var(--transition);
+        white-space: nowrap;
+      }
+      .btn-hire:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px var(--accent-glow);
+        background: linear-gradient(135deg, #0284c7, #1d4ed8);
+      }
+      .btn-hire .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #22c55e;
+        box-shadow: 0 0 8px #22c55e;
+        animation: pulse 1.8s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(1.3);
+        }
+      }
+
       /* Common Sections */
       section {
         padding: 6rem 0;
@@ -229,7 +270,7 @@
         );
       }
       .hero-content {
-        max-width: 800px;
+        max-width: 850px;
       }
       .hero-subtitle {
         color: var(--accent-color);
@@ -243,6 +284,7 @@
         display: flex;
         gap: 1rem;
         margin-top: 2rem;
+        flex-wrap: wrap;
       }
 
       /* Skills Section */
@@ -347,6 +389,83 @@
         margin-bottom: 0.5rem;
       }
 
+      /* Languages & International Section */
+      .lang-intl-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+      .lang-card {
+        background: var(--surface-color);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+      }
+      .lang-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+      .lang-card h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        color: var(--text-primary);
+      }
+      .lang-name {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--accent-color);
+        margin-bottom: 0.3rem;
+      }
+      .lang-level {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+      }
+      .lang-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: rgba(14, 165, 233, 0.1);
+        border: 1px solid rgba(14, 165, 233, 0.3);
+        color: var(--accent-color);
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-top: 0.5rem;
+      }
+      .intl-highlight {
+        background: linear-gradient(
+          135deg,
+          rgba(14, 165, 233, 0.08),
+          rgba(37, 99, 235, 0.05)
+        );
+        border: 1px solid rgba(14, 165, 233, 0.25);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-top: 1rem;
+      }
+      .intl-highlight h3 {
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+      .intl-highlight ul {
+        list-style: none;
+        color: var(--text-secondary);
+      }
+      .intl-highlight li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+      .intl-highlight li::before {
+        content: "🌏";
+        position: absolute;
+        left: 0;
+      }
+
       /* Projects Section */
       .projects-grid {
         display: grid;
@@ -438,8 +557,15 @@
         border-top: 1px solid var(--border-color);
       }
       footer p {
-        margin-bottom: 0;
+        margin-bottom: 1rem;
         font-size: 0.9rem;
+      }
+      .footer-cta {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin: 1.5rem 0;
       }
 
       /* Responsive */
@@ -458,6 +584,13 @@
         }
         .hero-actions {
           flex-direction: column;
+        }
+        .nav-right-container {
+          gap: 0.8rem;
+        }
+        .btn-hire {
+          font-size: 0.8rem;
+          padding: 0.5rem 0.9rem;
         }
       }
     </style>
@@ -481,11 +614,22 @@
                 ><span class="en">Skills</span
                 ><span class="fr">Compétences</span></a
               >
+              <a href="#languages"
+                ><span class="en">Languages</span
+                ><span class="fr">Langues</span></a
+              >
               <a href="#projects"
                 ><span class="en">Projects</span
                 ><span class="fr">Projets</span></a
               >
             </div>
+            <a
+              href="mailto:ibrahim.macinanke@gmail.com?subject=Job%20Opportunity%20/%20Opportunit%C3%A9%20Professionnelle"
+              class="btn-hire"
+              ><span class="dot"></span>
+              <span class="en">Hire Me</span>
+              <span class="fr">Recrutez-moi</span></a
+            >
             <div class="lang-switcher">
               <button
                 class="lang-btn active"
@@ -514,12 +658,12 @@
           <h1>Ibrahim Hamadoun Macinanké</h1>
 
           <h2 class="en">
-            Senior Full-Stack Developer & IT Maintenance Expert (10+ Years
-            Experience)
+            Full-Stack Software Developer | AI & Automation Engineer |
+            Trilingual Chinese–French–English Interpreter
           </h2>
           <h2 class="fr">
-            Développeur Full-Stack Senior & Expert en Maintenance IT (10+ ans
-            d'expérience)
+            Développeur Full-Stack | Ingénieur IA & Automatisation | Interprète
+            Trilingue Chinois–Français–Anglais
           </h2>
 
           <p class="en">
@@ -528,7 +672,9 @@
             With over 10 years of combined experience in the IT ecosystem
             (maintenance, hardware, networking) and 4+ years in application
             development, I build bridges between hardware engineering, software
-            development, and real-world business needs.
+            development, and real-world business needs. As a trilingual
+            Chinese–French–English interpreter, I also facilitate technical and
+            operational communication across international teams.
           </p>
           <p class="fr">
             Je conçois des architectures logicielles évolutives, des API haute
@@ -537,7 +683,9 @@
             d'expérience cumulée dans l'univers IT (maintenance, hardware,
             réseaux) et de 4+ ans en développement d'applications, je crée des
             ponts entre ingénierie matérielle, logicielle et besoins métiers
-            concrets.
+            concrets. En tant qu'interprète trilingue chinois–français–anglais,
+            je facilite également la communication technique et opérationnelle
+            entre équipes internationales.
           </p>
 
           <div class="hero-actions">
@@ -548,6 +696,15 @@
             <a href="#experience" class="btn btn-secondary">
               <span class="en">View My Career</span>
               <span class="fr">Voir mon parcours</span>
+            </a>
+            <a
+              href="https://wa.me/254185280391?text=Hello%20Ibrahim%2C%20I%20would%20like%20to%20discuss%20a%20professional%20opportunity."
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+            >
+              <span class="en">Available Immediately — WhatsApp</span>
+              <span class="fr">Disponible immédiatement — WhatsApp</span>
             </a>
           </div>
         </div>
@@ -581,9 +738,9 @@
           Robotics) has forged a rigorous vision regarding code quality, robust
           architectures, and hardware maintenance. I am also a professional
           Trilingual Interpreter, fluent in French, English (C1 Advanced - EF
-          SET Certified), and Mandarin Chinese (HSK 5 level). This asset allows
-          me to seamlessly collaborate within multidisciplinary and
-          international remote teams.
+          SET Certified), and Mandarin Chinese (HSK 4 certified, HSK 5 level).
+          This asset allows me to seamlessly collaborate within
+          multidisciplinary and international remote teams.
         </p>
         <p class="fr">
           Ma double casquette de Développeur Full-Stack, technicien systèmes &
@@ -592,9 +749,9 @@
           qualité du code, les architectures robustes et la maintenance
           matérielle. Je suis également Interprète Trilingue professionnel,
           maîtrisant parfaitement le Français, l'Anglais (Certifié C1 EF SET) et
-          le Chinois Mandarin (niveau HSK 5). Cet atout me permet d'évoluer avec
-          une aisance naturelle au sein d'équipes pluridisciplinaires et
-          internationales en distanciel.
+          le Chinois Mandarin (certifié HSK 4, niveau HSK 5). Cet atout me
+          permet d'évoluer avec une aisance naturelle au sein d'équipes
+          pluridisciplinaires et internationales en distanciel.
         </p>
 
         <p class="en">
@@ -722,10 +879,14 @@
             <ul class="skill-list">
               <li class="en">RESTful API Development and Integration</li>
               <li class="fr">Développement et intégration d'API RESTful</li>
-              <li class="en">Advanced API Testing using Postman and Insomnia</li>
+              <li class="en">
+                Advanced API Testing using Postman and Insomnia
+              </li>
               <li class="fr">Tests avancés d'API via Postman et Insomnia</li>
               <li class="en">API Endpoint Testing & Validation</li>
-              <li class="fr">Test et validation des points d'accès (Endpoints)</li>
+              <li class="fr">
+                Test et validation des points d'accès (Endpoints)
+              </li>
               <li class="en">HTTP Methods (GET, POST, PUT, PATCH, DELETE)</li>
               <li class="fr">Méthodes HTTP (GET, POST, PUT, PATCH, DELETE)</li>
               <li class="en">Request & Response Analysis</li>
@@ -737,65 +898,340 @@
               <li class="en">Backend Debugging & Troubleshooting</li>
               <li class="fr">Débogage backend & Résolution de problèmes</li>
               <li class="en">API Integration Testing</li>
-              <li class="fr">Tests d'intégration d'API avec systèmes tiers/front-end</li>
+              <li class="fr">
+                Tests d'intégration d'API avec systèmes tiers/front-end
+              </li>
             </ul>
           </div>
         </div>
 
         <!-- Technical Skill Positioning Matrix / Tableau de Positionnement -->
-        <div style="margin-top: 3rem; background: var(--surface-color); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
-          <h3 class="en" style="margin-bottom: 1.5rem; color: var(--text-primary); font-size: 1.3rem;">Core Technical Skills & Positioning</h3>
-          <h3 class="fr" style="margin-bottom: 1.5rem; color: var(--text-primary); font-size: 1.3rem;">Matrice de Positionnement des Compétences Clefs</h3>
-          <div style="overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <div
+          style="
+            margin-top: 3rem;
+            background: var(--surface-color);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+          "
+        >
+          <h3
+            class="en"
+            style="
+              margin-bottom: 1.5rem;
+              color: var(--text-primary);
+              font-size: 1.3rem;
+            "
+          >
+            Core Technical Skills & Positioning
+          </h3>
+          <h3
+            class="fr"
+            style="
+              margin-bottom: 1.5rem;
+              color: var(--text-primary);
+              font-size: 1.3rem;
+            "
+          >
+            Matrice de Positionnement des Compétences Clefs
+          </h3>
+          <div style="overflow-x: auto">
+            <table
+              style="width: 100%; border-collapse: collapse; text-align: left"
+            >
               <thead>
-                <tr style="border-bottom: 2px solid var(--border-color); color: var(--accent-color);">
-                  <th style="padding: 0.8rem;" class="en">Skill / Technology</th>
-                  <th style="padding: 0.8rem;" class="fr">Compétence / Technologie</th>
-                  <th style="padding: 0.8rem;" class="en">Positioning & Proficiency</th>
-                  <th style="padding: 0.8rem;" class="fr">Positionnement & Niveau</th>
+                <tr
+                  style="
+                    border-bottom: 2px solid var(--border-color);
+                    color: var(--accent-color);
+                  "
+                >
+                  <th style="padding: 0.8rem" class="en">Skill / Technology</th>
+                  <th style="padding: 0.8rem" class="fr">
+                    Compétence / Technologie
+                  </th>
+                  <th style="padding: 0.8rem" class="en">
+                    Positioning & Proficiency
+                  </th>
+                  <th style="padding: 0.8rem" class="fr">
+                    Positionnement & Niveau
+                  </th>
                 </tr>
               </thead>
-              <tbody style="color: var(--text-secondary);">
-                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4);">
-                  <td style="padding: 0.8rem; font-weight: 600; color: var(--text-primary);">Python / Django</td>
-                  <td style="padding: 0.8rem;"><span class="en">Practical Experience</span><span class="fr">Expérience pratique</span></td>
+              <tbody style="color: var(--text-secondary)">
+                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4)">
+                  <td
+                    style="
+                      padding: 0.8rem;
+                      font-weight: 600;
+                      color: var(--text-primary);
+                    "
+                  >
+                    Python / Django
+                  </td>
+                  <td style="padding: 0.8rem">
+                    <span class="en">Practical Experience</span
+                    ><span class="fr">Expérience pratique</span>
+                  </td>
                 </tr>
-                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4);">
-                  <td style="padding: 0.8rem; font-weight: 600; color: var(--text-primary);">JavaScript / Node.js</td>
-                  <td style="padding: 0.8rem;"><span class="en">Practical Experience</span><span class="fr">Expérience pratique</span></td>
+                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4)">
+                  <td
+                    style="
+                      padding: 0.8rem;
+                      font-weight: 600;
+                      color: var(--text-primary);
+                    "
+                  >
+                    JavaScript / Node.js
+                  </td>
+                  <td style="padding: 0.8rem">
+                    <span class="en">Practical Experience</span
+                    ><span class="fr">Expérience pratique</span>
+                  </td>
                 </tr>
-                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4);">
-                  <td style="padding: 0.8rem; font-weight: 600; color: var(--text-primary);">REST API</td>
-                  <td style="padding: 0.8rem;"><span class="en">Practical Experience</span><span class="fr">Expérience pratique</span></td>
+                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4)">
+                  <td
+                    style="
+                      padding: 0.8rem;
+                      font-weight: 600;
+                      color: var(--text-primary);
+                    "
+                  >
+                    REST API
+                  </td>
+                  <td style="padding: 0.8rem">
+                    <span class="en">Practical Experience</span
+                    ><span class="fr">Expérience pratique</span>
+                  </td>
                 </tr>
-                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4);">
-                  <td style="padding: 0.8rem; font-weight: 600; color: var(--accent-color);">Postman</td>
-                  <td style="padding: 0.8rem; font-weight: 600; color: #38bdf8;"><span class="en">Advanced Mastery</span><span class="fr">Maîtrise avancée</span></td>
+                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4)">
+                  <td
+                    style="
+                      padding: 0.8rem;
+                      font-weight: 600;
+                      color: var(--accent-color);
+                    "
+                  >
+                    Postman
+                  </td>
+                  <td style="padding: 0.8rem; font-weight: 600; color: #38bdf8">
+                    <span class="en">Advanced Mastery</span
+                    ><span class="fr">Maîtrise avancée</span>
+                  </td>
                 </tr>
-                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4);">
-                  <td style="padding: 0.8rem; font-weight: 600; color: var(--accent-color);">Insomnia</td>
-                  <td style="padding: 0.8rem; font-weight: 600; color: #38bdf8;"><span class="en">Advanced Mastery</span><span class="fr">Maîtrise avancée</span></td>
+                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4)">
+                  <td
+                    style="
+                      padding: 0.8rem;
+                      font-weight: 600;
+                      color: var(--accent-color);
+                    "
+                  >
+                    Insomnia
+                  </td>
+                  <td style="padding: 0.8rem; font-weight: 600; color: #38bdf8">
+                    <span class="en">Advanced Mastery</span
+                    ><span class="fr">Maîtrise avancée</span>
+                  </td>
                 </tr>
-                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4);">
-                  <td style="padding: 0.8rem; font-weight: 600; color: var(--text-primary);">React</td>
-                  <td style="padding: 0.8rem;"><span class="en">Practical Experience</span><span class="fr">Expérience pratique</span></td>
+                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4)">
+                  <td
+                    style="
+                      padding: 0.8rem;
+                      font-weight: 600;
+                      color: var(--text-primary);
+                    "
+                  >
+                    React
+                  </td>
+                  <td style="padding: 0.8rem">
+                    <span class="en">Practical Experience</span
+                    ><span class="fr">Expérience pratique</span>
+                  </td>
                 </tr>
-                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4);">
-                  <td style="padding: 0.8rem; font-weight: 600; color: var(--text-primary);">MongoDB / MySQL</td>
-                  <td style="padding: 0.8rem;"><span class="en">Practical Experience</span><span class="fr">Expérience pratique</span></td>
+                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4)">
+                  <td
+                    style="
+                      padding: 0.8rem;
+                      font-weight: 600;
+                      color: var(--text-primary);
+                    "
+                  >
+                    MongoDB / MySQL
+                  </td>
+                  <td style="padding: 0.8rem">
+                    <span class="en">Practical Experience</span
+                    ><span class="fr">Expérience pratique</span>
+                  </td>
                 </tr>
-                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4);">
-                  <td style="padding: 0.8rem; font-weight: 600; color: var(--text-primary);">Jest / Git</td>
-                  <td style="padding: 0.8rem;"><span class="en">Practical Experience</span><span class="fr">Expérience pratique</span></td>
+                <tr style="border-bottom: 1px solid rgba(51, 65, 85, 0.4)">
+                  <td
+                    style="
+                      padding: 0.8rem;
+                      font-weight: 600;
+                      color: var(--text-primary);
+                    "
+                  >
+                    Jest / Git
+                  </td>
+                  <td style="padding: 0.8rem">
+                    <span class="en">Practical Experience</span
+                    ><span class="fr">Expérience pratique</span>
+                  </td>
                 </tr>
                 <tr>
-                  <td style="padding: 0.8rem; font-weight: 600; color: var(--text-primary);">AWS</td>
-                  <td style="padding: 0.8rem;"><span class="en">Practical Experience</span><span class="fr">Expérience pratique</span></td>
+                  <td
+                    style="
+                      padding: 0.8rem;
+                      font-weight: 600;
+                      color: var(--text-primary);
+                    "
+                  >
+                    AWS
+                  </td>
+                  <td style="padding: 0.8rem">
+                    <span class="en">Practical Experience</span
+                    ><span class="fr">Expérience pratique</span>
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LANGUAGES & INTERNATIONAL EXPERIENCE SECTION -->
+    <section id="languages">
+      <div class="container">
+        <h2 class="en">Languages & International Experience</h2>
+        <h2 class="fr">Langues & Expérience Internationale</h2>
+
+        <p class="en">
+          My multilingual and multicultural background is a core professional
+          asset, enabling me to bridge technical teams, business stakeholders,
+          and international partners across Africa, Asia, and Europe.
+        </p>
+        <p class="fr">
+          Mon parcours multilingue et multiculturel est un atout professionnel
+          majeur, me permettant de faire le lien entre équipes techniques,
+          parties prenantes métier et partenaires internationaux à travers
+          l'Afrique, l'Asie et l'Europe.
+        </p>
+
+        <div class="lang-intl-grid">
+          <div class="lang-card">
+            <h3 class="en">Mandarin Chinese</h3>
+            <h3 class="fr">Chinois Mandarin</h3>
+            <div class="lang-name">中文</div>
+            <div class="lang-level en">
+              HSK 4 certified — HSK 5 level. Professional Chinese–French–English
+              interpretation.
+            </div>
+            <div class="lang-level fr">
+              Certifié HSK 4 — niveau HSK 5. Interprétation professionnelle
+              chinois–français–anglais.
+            </div>
+            <span class="lang-badge en">HSK 4 Certified · HSK 5 Level</span>
+            <span class="lang-badge fr">Certifié HSK 4 · Niveau HSK 5</span>
+          </div>
+
+          <div class="lang-card">
+            <h3 class="en">French</h3>
+            <h3 class="fr">Français</h3>
+            <div class="lang-name">Français</div>
+            <div class="lang-level en">Native / Bilingual proficiency.</div>
+            <div class="lang-level fr">Langue maternelle / Bilingue.</div>
+            <span class="lang-badge en">Native</span>
+            <span class="lang-badge fr">Langue maternelle</span>
+          </div>
+
+          <div class="lang-card">
+            <h3 class="en">English</h3>
+            <h3 class="fr">Anglais</h3>
+            <div class="lang-name">English</div>
+            <div class="lang-level en">
+              C1 Advanced — EF SET Certified. Professional working proficiency.
+            </div>
+            <div class="lang-level fr">
+              C1 Avancé — Certifié EF SET. Maîtrise professionnelle.
+            </div>
+            <span class="lang-badge en">C1 Advanced · EF SET</span>
+            <span class="lang-badge fr">C1 Avancé · EF SET</span>
+          </div>
+
+          <div class="lang-card">
+            <h3 class="en">Songhoi</h3>
+            <h3 class="fr">Songhaï</h3>
+            <div class="lang-name">Songhoi</div>
+            <div class="lang-level en">Native / Local language.</div>
+            <div class="lang-level fr">Langue maternelle / locale.</div>
+            <span class="lang-badge en">Native</span>
+            <span class="lang-badge fr">Langue maternelle</span>
+          </div>
+
+          <div class="lang-card">
+            <h3 class="en">Bambara</h3>
+            <h3 class="fr">Bambara</h3>
+            <div class="lang-name">Bambara</div>
+            <div class="lang-level en">Fluent / Professional proficiency.</div>
+            <div class="lang-level fr">Courant / Maîtrise professionnelle.</div>
+            <span class="lang-badge en">Fluent</span>
+            <span class="lang-badge fr">Courant</span>
+          </div>
+        </div>
+
+        <div class="intl-highlight">
+          <h3 class="en">International Academic & Professional Background</h3>
+          <h3 class="fr">Parcours Académique & Professionnel International</h3>
+          <ul class="en">
+            <li>
+              <strong>University Studies in China:</strong> Completed university
+              degrees in computer science and technology in China, gaining deep
+              linguistic and cultural immersion.
+            </li>
+            <li>
+              <strong>IE POWER (Bamako – Abidjan, 2026):</strong> Six-month
+              certified activity as Bilingual Interpreter & Technical Support
+              Specialist, bridging Chinese and French-speaking teams across Mali
+              and Côte d'Ivoire.
+            </li>
+            <li>
+              <strong>Trilingual Professional Interpreting:</strong> Real-world
+              experience in technical, operational, and administrative
+              interpretation (Chinese–French–English) in cross-border business
+              environments.
+            </li>
+            <li>
+              <strong>Remote International Collaboration:</strong> Proven
+              ability to work seamlessly with multicultural and
+              multidisciplinary teams across time zones.
+            </li>
+          </ul>
+          <ul class="fr">
+            <li>
+              <strong>Études Universitaires en Chine :</strong> Obtention de
+              diplômes universitaires en informatique et technologie en Chine,
+              avec une immersion linguistique et culturelle profonde.
+            </li>
+            <li>
+              <strong>IE POWER (Bamako – Abidjan, 2026) :</strong> Six mois
+              d'activité certifiée en tant qu'Interprète Bilingue & Spécialiste
+              Support Technique, faisant le lien entre équipes chinoises et
+              francophones au Mali et en Côte d'Ivoire.
+            </li>
+            <li>
+              <strong>Interprétariat Professionnel Trilingue :</strong>
+              Expérience concrète en interprétation technique, opérationnelle et
+              administrative (chinois–français–anglais) dans des environnements
+              d'affaires transfrontaliers.
+            </li>
+            <li>
+              <strong>Collaboration Internationale à Distance :</strong>
+              Capacité prouvée à travailler avec des équipes multiculturelles et
+              pluridisciplinaires à travers les fuseaux horaires.
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -816,30 +1252,49 @@
             <h3 class="timeline-title fr">
               Interprète Bilingue & Spécialiste Support Technique
             </h3>
-            <div class="timeline-company">IE POWER (Bamako - Abidjan)</div>
+            <div class="timeline-company">IE POWER (Bamako – Abidjan)</div>
             <div class="timeline-content en">
               <ul>
                 <li>
-                  On-site and technical Chinese-French bilingual interpreting and translation.
+                  Chinese–French–English interpretation for technical,
+                  operational, and managerial meetings.
                 </li>
                 <li>
-                  Daily office administrative tasks and management of warehouse delivery documents and logistics tracking.
+                  Technical and operational communication between
+                  Chinese-speaking and French-speaking teams.
                 </li>
                 <li>
-                  Technical support, related IT work, and processing of various corporate documents.
+                  Warehouse delivery documentation and logistics tracking.
+                </li>
+                <li>
+                  Daily administrative operations and processing of various
+                  corporate documents.
+                </li>
+                <li>
+                  On-site and remote technical support and related IT tasks.
                 </li>
               </ul>
             </div>
             <div class="timeline-content fr">
               <ul>
                 <li>
-                  Interprétariat et traduction bilingue Chinois-Français (sur le terrain et technique).
+                  Interprétation chinois–français–anglais pour réunions
+                  techniques, opérationnelles et de direction.
                 </li>
                 <li>
-                  Tâches administratives quotidiennes du bureau, gestion des documents de livraison de l'entrepôt et suivi logistique.
+                  Communication technique et opérationnelle entre équipes
+                  sinophones et francophones.
                 </li>
                 <li>
-                  Support technique, travaux IT associés et traitement de documents divers.
+                  Documentation de livraison d'entrepôt et suivi logistique.
+                </li>
+                <li>
+                  Opérations administratives quotidiennes et traitement de
+                  documents d'entreprise divers.
+                </li>
+                <li>
+                  Support technique sur site et à distance et travaux IT
+                  associés.
                 </li>
               </ul>
             </div>
@@ -3245,21 +3700,36 @@
     <!-- FOOTER SECTION -->
     <footer>
       <div class="container">
+        <div class="footer-cta">
+          <a
+            href="mailto:ibrahim.macinanke@gmail.com?subject=Job%20Opportunity%20/%20Opportunit%C3%A9%20Professionnelle"
+            class="btn btn-primary"
+            ><span class="en">📧 Email Me</span
+            ><span class="fr">📧 Envoyez-moi un e-mail</span></a
+          >
+          <a
+            href="https://wa.me/254185280391?text=Hello%20Ibrahim%2C%20I%20would%20like%20to%20discuss%20a%20professional%20opportunity."
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary"
+            ><span class="en">💬 WhatsApp</span
+            ><span class="fr">💬 WhatsApp</span></a
+          >
+        </div>
         <p class="en">
-          © 2026 Ibrahim Hamadoun Macinanké. Full-Stack Developer, AI Engineer &
-          IT Systems Technician. Designed with passion and technical precision.
+          © 2026 Ibrahim Hamadoun Macinanké. Full-Stack Software Developer, AI &
+          Automation Engineer, Trilingual Chinese–French–English Interpreter.
         </p>
         <p class="fr">
           © 2026 Ibrahim Hamadoun Macinanké. Développeur Full-Stack, Ingénieur
-          IA & Technicien Systèmes IT. Conçu avec passion et précision
-          technique.
+          IA & Automatisation, Interprète Trilingue Chinois–Français–Anglais.
         </p>
         <p class="en">
-          Based in Nairobi, Kenya. Available for remote international
-          opportunities.
+          Based in Nairobi, Kenya. Available immediately for remote
+          international opportunities.
         </p>
         <p class="fr">
-          Basé à Nairobi, Kenya. Disponible pour des opportunités
+          Basé à Nairobi, Kenya. Disponible immédiatement pour des opportunités
           internationales en distanciel.
         </p>
       </div>
